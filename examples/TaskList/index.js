@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var Task_1 = require("./Task");
+var TaskList_1 = require("./TaskList");
+var list = new TaskList_1.TaskList();
+list.addTask(new Task_1.Task("walk the dog"));
+list.addTask(new Task_1.Task("mow lawn", true));
+var newTask = new Task_1.Task("water garden");
+list.addTask(newTask);
+list.printTaskList();
