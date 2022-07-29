@@ -22,18 +22,18 @@ var Rocket = /** @class */ (function () {
         return this.currentMassKg() + item.massKg <= this.totalCapacityKg;
     };
     Rocket.prototype.addCargo = function (cargo) {
-        if (this.canAdd(cargo)) {
-            this.cargoItems.push(cargo);
-            return true;
+        if (!this.canAdd(cargo)) {
+            return false;
         }
-        return false;
+        this.cargoItems.push(cargo);
+        return true;
     };
     Rocket.prototype.addAstronaut = function (astronaut) {
-        if (this.canAdd(astronaut)) {
-            this.astronauts.push(astronaut);
-            return true;
+        if (!this.canAdd(astronaut)) {
+            return false;
         }
-        return false;
+        this.astronauts.push(astronaut);
+        return true;
     };
     return Rocket;
 }());
